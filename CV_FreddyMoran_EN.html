@@ -12,9 +12,14 @@
   <!-- Ionicons -->
   <link rel="stylesheet" href="ionicons-2.0.1/css/ionicons.min.css">
 
+  <script src="chartjs/js/Chart.bundle.min.js" charset="utf-8"></script>
+
   <style>
     body {
       padding: 5%;
+      margin-left: 5%;
+      margin-right: 5%;
+      /*align-content: center;*/
     }
 
     .hr-title {
@@ -30,9 +35,13 @@
     .face-picture {
       border-radius: 50%;
       border: 1px solid rgba(52,73,94,.44);
-      width: 25%;
+      width: 30%;
       padding: 4px;
       align-content: center;
+    }
+
+    .badge-picture {
+      width: 15%;
     }
 
     .blue-iconcolor {
@@ -75,20 +84,20 @@
                 </div>
               </div>
               <div class="row">
-                <div class="col-md-4">
+                <div class="col-md-6">
                   <h5 class="pull-left"><i class="fa fa-map-marker blue-iconcolor"></i><strong> Santiago, CL</strong></h5>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-6">
                   <h5 class="pull-left"><i class="fa fa-mobile blue-iconcolor"></i><strong> +56977597199</strong></h5>
                 </div>
               </div>
               <div class="row">
-                <div class="col-md-4">
+                <div class="col-md-6">
                   <h5 class="pull-left"><i class="fa fa-at blue-iconcolor"></i>
                     <a href="mailto:freddyg.moran@gmail.com"><strong> freddyg.moran@gmail.com</strong></a>
                   </h5>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-6">
                   <a href="https://goo.gl/BJSf1u" target="_blank">
                     <img src="https://static.licdn.com/scds/common/u/img/webpromo/btn_viewmy_160x25.png" alt="view my linkedin profile">
                   </a>
@@ -98,21 +107,9 @@
             </div>
           </div>
           <div class="col-md-6 text-center">
-            <a href="https://goo.gl/BJSf1u" target="_blank" title="linkedin profile"><img alt="face" src="img/face.png" class="face-picture"></a>
-            <!-- <div class="LI-profile-badge text-center"  data-version="v1"
-                  data-size="large" data-locale="en_US"
-                  data-type="horizontal" data-theme="light"
-                  data-vanity="freddymoran">
-            </div> -->
-            <!--
-            <div class="box">
-              <div class="row text-center">
-                <div class="col-md-12">
-                  <img alt="face" src="img/face.png" class="face-picture">
-                </div>
-              </div>
-            </div>
-          -->
+            <a href="https://goo.gl/BJSf1u" target="_blank" title="linkedin profile">
+              <img alt="face" src="img/face.png" class="face-picture">
+            </a>
           </div>
         </div>
 
@@ -261,7 +258,7 @@
 
             <h3>PeopleSoft Consultant</h3>
             <h4 class="cv-textcolor">
-              <a href="http://cimaitgroup.com" target="_blank"><strong>Cima Consulting</strong></a>
+              <a href="http://cimaitgroup.com" target="_blank"><strong>Cima Group Consulting</strong></a>
             </h4>
             <div class="row">
               <div class="col-md-6">
@@ -323,7 +320,9 @@
                     Computer Science engineering and Analysts
                   </li>
                   <li>
-                    I led the Ecuadorian development group for Open Source project MIFEX.
+                    I led the Ecuadorian development group for Open Source project
+                    <a href="http://mifos.org/" target="_blank">MIFEX/MIFOS</a>
+                    .
                     This project marked in the development of microfinance in Ecuador to
                     implement autemated systems for control and management of operations
                   </li>
@@ -334,8 +333,157 @@
           </div>
           <div class="col-md-6">
 
-            <h2 class="cv-textcolor"><strong>ACHIEVEMENTS</strong></h2>
+            <h2 class="cv-textcolor"><strong>ACHIEVEMENTS AND BADGES</strong></h2>
             <hr class="hr-title">
+
+            <div class="row">
+              <div class="col-md-12">
+                <ul>
+                  <li>Implementation of forntend system
+                    <a href="http://www.banktrade.com/english/trade-finance-solutions.aspx" target="_blank">
+                      ClientTrade
+                    </a>
+                   in severals banks around the world to manage the trade finance</li>
+                  <li>Creation of mobile app for
+                    <a href="http://www.banktrade.com/english/trade-finance-solutions.aspx" target="_blank">
+                      ClientTrade
+                    </a>
+                  </li>
+                  <li>Creation of
+                    <a href="http://www.javsterisk.org/" target="_blank">
+                      javsterisk
+                    </a>
+                    system, to manage the IP centrals based on asterisk
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <br/>
+            <div class="row">
+              <div class="col-md-12 text-center">
+
+                <a href="http://toolness.github.io/hackasaurus-parable/navigator-badge/" target="_blank" title="Navigator">
+                  <img alt="face" src="img/badge/badgeNavigator.png" class="badge-picture">
+                </a>
+
+                <a href="https://sites.google.com/site/cursobasicomarketingdigital/home/fundamentos-marketing-digital-tecnologia-y-medicion" target="_blank" title="Marketing">
+                  <img alt="face" src="img/badge/badgeMarketing.png" class="badge-picture">
+                </a>
+
+                <a href="https://sites.google.com/site/cursobasicomarketingdigital/home/panorama-digital" target="_blank" title="Digital">
+                  <img alt="face" src="img/badge/badgeDigital.png" class="badge-picture">
+                </a>
+
+              </div>
+            </div>
+
+            <h2 class="cv-textcolor"><strong>SKILLS</strong></h2>
+            <hr class="hr-title">
+
+            <div class="row">
+              <div class="col-md-6">
+                <canvas id="dbPie" width="50%" height="50%"></canvas>
+
+                <script>
+                var db = document.getElementById("dbPie");
+                var dbPie = new Chart(db, {
+                    type: 'pie',
+                    data: {
+                        labels: ["Oracle", "MSSQL", "DB2", "MySQL", "Others"],
+                        datasets: [{
+                            label: 'Databases',
+                            data: [30, 29, 9, 30, 2],
+                            backgroundColor: [
+                                'rgb(255, 99, 132)',
+                                'rgb(54, 162, 235)',
+                                'rgb(255, 205, 86)',
+                                'rgb(0, 255, 200)',
+                                'rgb(0, 0, 255)'
+                            ]
+                        }]
+                    }
+                });
+
+                </script>
+              </div>
+              <div class="col-md-6">
+                <canvas id="codingPie" width="50%" height="50%"></canvas>
+
+                <script>
+                var coding = document.getElementById("codingPie");
+                var codingPie = new Chart(coding, {
+                    type: 'pie',
+                    data: {
+                        labels: ["Java", "Js", "html", "css", "Others"],
+                        datasets: [{
+                            label: 'Databases',
+                            data: [40, 20, 18, 10, 2],
+                            backgroundColor: [
+                                'rgb(255, 99, 132)',
+                                'rgb(54, 162, 235)',
+                                'rgb(255, 205, 86)',
+                                'rgb(0, 255, 200)',
+                                'rgb(0, 0, 255)'
+                            ]
+                        }]
+                    }
+                });
+
+                </script>
+              </div>
+
+            </div>
+
+            <div class="row">
+              <div class="col-md-6">
+                <canvas id="soPie" width="50%" height="50%"></canvas>
+
+                <script>
+                var so = document.getElementById("soPie");
+                var soPie = new Chart(so, {
+                    type: 'pie',
+                    data: {
+                        labels: ["Windows", "Ubuntu", "Others"],
+                        datasets: [{
+                            label: 'Databases',
+                            data: [40, 50, 10],
+                            backgroundColor: [
+                                'rgb(255, 99, 132)',
+                                'rgb(54, 162, 235)',
+                                'rgb(255, 205, 86)'
+                            ]
+                        }]
+                    }
+                });
+
+                </script>
+              </div>
+              <div class="col-md-6">
+                <canvas id="appServerPie" width="50%" height="50%"></canvas>
+
+                <script>
+                var appServer = document.getElementById("appServerPie");
+                var appServerPie = new Chart(appServer, {
+                    type: 'pie',
+                    data: {
+                        labels: ["Tomcat", "Websphere", "Weblogic", "Jboss", "Others"],
+                        datasets: [{
+                            label: 'Databases',
+                            data: [30, 20, 20, 25, 5],
+                            backgroundColor: [
+                              'rgb(255, 99, 132)',
+                              'rgb(54, 162, 235)',
+                              'rgb(255, 205, 86)',
+                              'rgb(0, 255, 200)',
+                              'rgb(0, 0, 255)'
+                            ]
+                        }]
+                    }
+                });
+
+                </script>
+              </div>
+            </div>
 
             <h2 class="cv-textcolor"><strong>STRENGTHS</strong></h2>
             <hr class="hr-title">
@@ -377,6 +525,23 @@
 
             <h2 class="cv-textcolor"><strong>EDUCATION</strong></h2>
             <hr class="hr-title">
+
+            <h3>FullStack Development</h3>
+            <h4 class="cv-textcolor"><strong>FreeCodeCamp</strong></h4>
+            <div class="row">
+              <div class="col-md-6">
+                <h5><i class="fa fa-calendar"></i> 2017 - Ongoing</h5>
+              </div>
+              <div class="col-md-6">
+                <h5><i class="fa fa-free-code-camp"></i>
+                  <a href="https://www.freecodecamp.com/freddycucho" target="_blank">
+                    FreeCodeCamp
+                  </a>
+                </h5>
+              </div>
+            </div>
+
+            <hr class="hr-dotted">
 
             <h3>Master in Planning and Management Control</h3>
             <h4 class="cv-textcolor"><strong>Universidad Mayor</strong></h4>
