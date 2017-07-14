@@ -381,7 +381,85 @@
             <hr class="hr-title">
 
             <div class="row">
-              <div class="col-md-6">
+              <div class="col-md-4">
+                <canvas id="codingPie" width="50%" height="50%"></canvas>
+
+                <script>
+                var coding = document.getElementById("codingPie");
+                var codingPie = new Chart(coding, {
+                    type: 'pie',
+                    data: {
+                        labels: ["Java", "xslt", "C++", "Others"],
+                        datasets: [{
+                            label: 'Databases',
+                            data: [45, 25, 20, 10],
+                            backgroundColor: [
+                                'rgb(255, 99, 132)',
+                                'rgb(54, 162, 235)',
+                                'rgb(255, 205, 86)',
+                                'rgb(0, 255, 200)'
+                            ]
+                        }]
+                    }
+                });
+
+                </script>
+              </div>
+              <div class="col-md-4">
+                <canvas id="webPie" width="50%" height="50%"></canvas>
+
+                <script>
+                var web = document.getElementById("webPie");
+                var webPie = new Chart(web, {
+                    type: 'pie',
+                    data: {
+                        labels: ["html", "css", "jquery", "Bootstraps", "Others"],
+                        datasets: [{
+                            label: 'Databases',
+                            data: [30, 15, 25, 25, 5],
+                            backgroundColor: [
+                                'rgb(255, 99, 132)',
+                                'rgb(54, 162, 235)',
+                                'rgb(255, 205, 86)',
+                                'rgb(0, 255, 200)',
+                                'rgb(0, 0, 255)'
+                            ]
+                        }]
+                    }
+                });
+
+                </script>
+              </div>
+              <div class="col-md-4">
+                <canvas id="frameworkPie" width="50%" height="50%"></canvas>
+
+                <script>
+                var framework = document.getElementById("frameworkPie");
+                var frameworkPie = new Chart(framework, {
+                    type: 'pie',
+                    data: {
+                        labels: ["JSF", "Spring", "Hibernate", "Struts", "Others"],
+                        datasets: [{
+                            label: 'Databases',
+                            data: [40, 20, 25, 13, 2],
+                            backgroundColor: [
+                                'rgb(255, 99, 132)',
+                                'rgb(54, 162, 235)',
+                                'rgb(255, 205, 86)',
+                                'rgb(0, 255, 200)',
+                                'rgb(0, 0, 255)'
+                            ]
+                        }]
+                    }
+                });
+
+                </script>
+              </div>
+
+            </div>
+
+            <div class="row">
+              <div class="col-md-4">
                 <canvas id="dbPie" width="50%" height="50%"></canvas>
 
                 <script>
@@ -406,36 +484,7 @@
 
                 </script>
               </div>
-              <div class="col-md-6">
-                <canvas id="codingPie" width="50%" height="50%"></canvas>
-
-                <script>
-                var coding = document.getElementById("codingPie");
-                var codingPie = new Chart(coding, {
-                    type: 'pie',
-                    data: {
-                        labels: ["Java", "Js", "html", "css", "Others"],
-                        datasets: [{
-                            label: 'Databases',
-                            data: [40, 20, 18, 10, 2],
-                            backgroundColor: [
-                                'rgb(255, 99, 132)',
-                                'rgb(54, 162, 235)',
-                                'rgb(255, 205, 86)',
-                                'rgb(0, 255, 200)',
-                                'rgb(0, 0, 255)'
-                            ]
-                        }]
-                    }
-                });
-
-                </script>
-              </div>
-
-            </div>
-
-            <div class="row">
-              <div class="col-md-6">
+              <div class="col-md-4">
                 <canvas id="soPie" width="50%" height="50%"></canvas>
 
                 <script>
@@ -458,7 +507,8 @@
 
                 </script>
               </div>
-              <div class="col-md-6">
+
+              <div class="col-md-4">
                 <canvas id="appServerPie" width="50%" height="50%"></canvas>
 
                 <script>
